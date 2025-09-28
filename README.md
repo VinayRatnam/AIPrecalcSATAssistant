@@ -37,7 +37,7 @@ First, clone this repository to your local machine:
 ```bash
 git clone <your-repository-url>
 cd <your-repository-name>
-
+```
 
 ### Step 2: Set Up a Virtual Environment
 
@@ -65,3 +65,49 @@ llama-index
 gradio
 python-dotenv
 openai
+```
+
+Now install all the required packages using pip:
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Add Your Homework Documents
+
+Place all your study materials (e.g., `.pdf`, `.docx`, `.txt` files) inside the `data` directory. If this directory doesn't exist, please create it. The chatbot will use these files as its knowledge base.
+
+
+### Step 5: Set Up Your OpenAI API Key
+
+Your secret API key should never be hard-coded into the script. We'll use a `.env` file to manage it securely.
+
+1.  Create a file named `.env` in the root directory of the project.
+2.  Add your OpenAI API key to this file as follows:
+
+    ```env
+    # .env file
+    OPENAI_API_KEY="sk-YourSuperSecretKeyGoesHere12345"
+    ```
+
+**Important:** The `.gitignore` file in this repository is configured to ignore the `.env` file, ensuring your secret key is never committed to GitHub.
+
+---
+
+## ▶️ Running the Application
+
+With the setup complete, you can now launch the chatbot.
+
+1.  **Run the main script from your terminal:**
+    ```bash
+    python app.py
+    ```
+    *(Assuming your main Python script is named `app.py`)*
+
+2.  **First-Time Indexing:** The first time you run the script, you will see messages indicating that the index is being created. This process may take a few moments depending on the number of documents. The index will be saved to a new `storage` directory.
+
+3.  **Launch Gradio:** Once the index is ready, the script will launch the Gradio web server. You will see output in your terminal like this:
+    ```
+    Running on local URL:  [http://127.0.0.1:7860](http://127.0.0.1:7860)
+    ```
+
+4.  **Open the Chatbot:** Open the provided URL in your web browser to start chatting with your personal AI tutor!
