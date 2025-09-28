@@ -37,3 +37,31 @@ First, clone this repository to your local machine:
 ```bash
 git clone <your-repository-url>
 cd <your-repository-name>
+
+
+### Step 2: Set Up a Virtual Environment
+
+It is highly recommended to use a virtual environment to manage project dependencies.
+
+* **On macOS / Linux:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+* **On Windows:**
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+
+### Step 3: Install Dependencies
+
+This project requires a few Python packages. Create a file named `requirements.txt` in the root of the project and add the following lines:
+
+```txt
+# requirements.txt
+llama-index
+gradio
+python-dotenv
+openai
